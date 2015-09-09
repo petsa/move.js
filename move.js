@@ -492,7 +492,8 @@ module.exports = after;
  */
 
 function after(el, fn){
-  if (!supported || !has(el)) return fn();
+  // if (!supported || !has(el)) return fn();
+  if (!supported) return fn();
   emitter(el).bind(fn);
   return fn;
 };
